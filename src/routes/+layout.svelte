@@ -5,6 +5,7 @@
   import t, { setLanguage } from "$lib/translations/language.svelte";
   import english from "$lib/assets/en.svg";
   import polish from "$lib/assets/pl.svg";
+  import { resolve } from "$app/paths";
 
   let { children } = $props();
   const urlMap: {
@@ -38,17 +39,17 @@
 <main>
   <h1>{urlMap[url]}</h1>
   <nav>
-    <a href="/" class:active={url === "/"}>{t("bio.header")}</a>
-    <a href="/robotics" class:active={url === "/robotics"}
+    <a href={resolve("/")} class:active={url === "/"}>{t("bio.header")}</a>
+    <a href={resolve("/")} class:active={url === "/robotics"}
       >{t("robotics.header")}</a
     >
-    <a href="/backend" class:active={url === "/backend"}
+    <a href={resolve("/backend")} class:active={url === "/backend"}
       >{t("backend.header")}</a
     >
-    <a href="/frontend" class:active={url === "/frontend"}
+    <a href={resolve("/frontend")} class:active={url === "/frontend"}
       >{t("frontend.header")}</a
     >
-    <a href="/contact" class:active={url === "/contact"}
+    <a href={resolve("/contact")} class:active={url === "/contact"}
       >{t("contact.header")}</a
     >
     <div class="languages">
