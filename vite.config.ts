@@ -16,7 +16,7 @@ export default defineConfig({
       // See https://svelte.dev/docs/kit/adapters for more information about adapters.
       adapter: adapter({ fallback: "index.html" }),
       paths: {
-        base: process.env.NODE_ENV === "production" ? "/cv" : ""
+        base: process.argv.includes("dev") ? "" : process.env.BASE_PATH
       }
     })
   ]

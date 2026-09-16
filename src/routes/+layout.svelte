@@ -40,7 +40,7 @@
   <h1>{urlMap[url]}</h1>
   <nav>
     <a href={resolve("/")} class:active={url === "/"}>{t("bio.header")}</a>
-    <a href={resolve("/")} class:active={url === "/robotics"}
+    <a href={resolve("/robotics")} class:active={url === "/robotics"}
       >{t("robotics.header")}</a
     >
     <a href={resolve("/backend")} class:active={url === "/backend"}
