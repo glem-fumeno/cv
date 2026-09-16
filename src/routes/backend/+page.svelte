@@ -1,0 +1,78 @@
+<script lang="ts">
+  import fmnV1 from "$lib/assets/fmn-v1.png";
+  import fmnV2 from "$lib/assets/fmn-v3.png";
+  import fmnV3 from "$lib/assets/fmn-v2.png";
+  import pim from "$lib/assets/pim.png";
+  import users from "$lib/assets/users.png";
+  import qpw from "$lib/assets/qpw.png";
+  import deepDive from "$lib/assets/deep-dive-v1.png";
+  import t from "$lib/translations/language.svelte";
+</script>
+
+<h2>{t("backend.fmn.title")}</h2>
+<span>
+  <div class="images">
+    <img src={fmnV1} alt={t("backend.fmn.title") + " 1"} />
+    <img src={fmnV2} alt={t("backend.fmn.title") + " 2"} />
+    <img src={fmnV3} alt={t("backend.fmn.title") + " 3"} />
+  </div>
+  <p>{t("backend.fmn.content")}</p>
+</span>
+
+<h2>{t("backend.pim.title")}</h2>
+<span>
+  <p>{t("backend.pim.content")}</p>
+  <img src={pim} alt={t("backend.pim.title")} />
+</span>
+
+<h2>{t("backend.users.title")}</h2>
+<span>
+  <img src={users} alt={t("backend.users.title")} />
+  <p>{t("backend.users.content")}</p>
+</span>
+
+<h2>{t("backend.qpw.title")}</h2>
+<span>
+  <p>{t("backend.qpw.content")}</p>
+  <img src={qpw} alt={t("backend.qpw.title")} />
+</span>
+
+<h2>{t("backend.deepdive.title")}</h2>
+<span>
+  <img src={deepDive} alt={t("backend.deepdive.title")} />
+  <p>{t("backend.deepdive.content")}</p>
+</span>
+
+<style>
+  h2 {
+    margin-block: 1rem;
+  }
+  .images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.2rem;
+    img {
+      width: calc(200px / 3);
+      aspect-ratio: auto;
+    }
+  }
+  img {
+    margin-block: 1.5rem;
+    object-fit: cover;
+    display: block;
+    width: 200px;
+    border-radius: 0.5rem;
+    border: 2px solid var(--color-accent);
+  }
+  span {
+    display: grid;
+    gap: 1rem;
+
+    &:nth-child(odd) {
+      grid-template-columns: auto 1fr;
+    }
+    &:nth-child(even) {
+      grid-template-columns: 1fr auto;
+    }
+  }
+</style>
