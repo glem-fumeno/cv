@@ -7,7 +7,7 @@
   import polish from "$lib/assets/icons/pl.svg";
   import type { Language } from "$lib/types";
   import burger from "$lib/assets/icons/burger.svg";
-    import { resolve } from "$app/paths";
+  import { resolve } from "$app/paths";
 
   let { children } = $props();
   const urlMap: {
@@ -43,14 +43,29 @@
     { language: "English", picture: english },
     { language: "Polski", picture: polish }
   ];
+
   let drawer: HTMLDialogElement;
+  let closing = $state(false);
 
   function openDrawer() {
+    closing = false;
     drawer.showModal();
   }
 
   function closeDrawer() {
-    drawer.close();
+    closing = true;
+  }
+
+  function handleTransitionEnd(e: TransitionEvent) {
+    if (closing && e.target === drawer && e.propertyName === "translate") {
+      closing = false;
+      drawer.close();
+    }
+  }
+
+  function handleCancel(e: Event) {
+    e.preventDefault();
+    closeDrawer();
   }
 </script>
 
@@ -68,7 +83,9 @@
   <div class="non-header">
     <nav class="nav-sidebar">
       {#each routes as route}
-        <a href={resolve(route.url as any)} class:active={url === route.url}>{route.header}</a>
+        <a href={resolve(route.url as any)} class:active={url === route.url}
+          >{route.header}</a
+        >
       {/each}
       <div class="languages">
         {#each languages as language}
@@ -86,7 +103,10 @@
   <dialog
     bind:this={drawer}
     class="nav-drawer"
+    class:closing
     onclick={(e) => e.target === drawer && closeDrawer()}
+    ontransitionend={handleTransitionEnd}
+    oncancel={handleCancel}
   >
     <nav>
       {#each routes as route}
@@ -192,6 +212,7 @@
       display: none;
     }
   }
+
   .nav-drawer {
     margin: 0 auto 0 0;
     height: 100dvh;
@@ -203,6 +224,32 @@
       translate 0.25s ease,
       overlay 0.25s allow-discrete,
       display 0.25s allow-discrete;
+
+    &[open] {
+      translate: 0 0;
+    }
+
+    &[open].closing {
+      translate: -100% 0;
+    }
+
+    @starting-style {
+      &[open] {
+        translate: -100% 0;
+      }
+      &[open]::backdrop {
+      background-color: #00000000;
+      }
+    }
+
+    &::backdrop {
+      background-color: #00000044;
+      transition: background-color 0.25s ease;
+    }
+
+    &.closing::backdrop {
+      background-color: #00000000;
+    }
   }
 
   .languages {

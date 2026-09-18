@@ -4,7 +4,9 @@
 </script>
 
 <img alt="Emilia Glibowska" src={portrait} />
-<p>{t("bio.content")}</p>
+<p>{t("bio.p1")}</p>
+<p>{t("bio.p2")}</p>
+<p>{t("bio.p3")}</p>
 
 <style>
   img {

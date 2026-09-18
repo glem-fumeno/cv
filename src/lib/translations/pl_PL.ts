@@ -1,14 +1,24 @@
 export default {
   bio: {
     header: "O mnie",
-    content: `
-  Doświadczona, pełna pasji programistka z ponad czteroletnim doświadczeniem
-  zawodowym i wieloma zrealizowanymi projektami. Specjalizuję się we
-  frameworkach takich jak Flask czy FastAPI. Projektowana przeze mnie
+    p1: `
+  Jestem pełną pasji programistką z ponad czteroletnim doświadczeniem
+  zawodowym i licznymi zrealizowanymi projektami. Projektowana przeze mnie
   architektura oprogramowania jest stabilna i skalowalna. Cenię sobie
-  przejrzysty i łatwy w utrzymaniu kod, a także zasady TDD. W wolnym czasie
-  projektuję wydruki 3D, płytki drukowane i programy, które ułatwiają mi
-  codzienne życie.
+  przejrzysty i łatwy w utrzymaniu kod, a także zasady TDD.
+`,
+    p2: `
+  Moje zainteresowanie programowaniem zaczęło się w dzieciństwie
+  od Processing i p5.js. W Technikum Mechatronicznym nr. 1 w Warszawie
+  zainteresowałam się robotyką poprzez programowanie płytek Arduino i Raspberry
+  Pi. Po ukończeniu technikum zostałam zatrudniona w firmie Elmark Automatyka
+  S.A., gdzie zdobyłam doświadczenie w tworzeniu aplikacji internetowych
+  zarówno po stronie serwerowej, jak i klienckiej.
+`,
+    p3: `
+  W wolnym czasie projektuję modele do druku 3D, obwody elektroniczne oraz
+  programy, które ułatwiają mi codzienne życie. Planuję rozpocząć studia
+  na kierunku mechatronicznym, aby pogłębić swoje zainteresowania.
 `
   },
   robotics: {

@@ -1,13 +1,23 @@
 export default {
   bio: {
     header: "Bio",
-    content: `
-  An experienced, passionate developer with over four years of work experience
-  and many projects to back it up. I specialize in frameworks such as Flask
-  or FastAPI. The software architecture I design is stable and scalable. I
-  value clean and maintainable code as well as the principles of TDD. In
-  my free time I design dedicated 3D prints, circuit bords, and software to
-  help in my day to day life.
+    p1: `
+  I am a passionate software developer with over four years of professional
+  experience and numerous completed projects. The software architecture
+  I design is stable and scalable. I value clear and maintainable code,
+  as well as the principles of TDD.
+`,
+    p2: `
+  My interest in programming started in childhood with Processing and
+  p5.js. At Mechatronics Technical High School No. 1 in Warsaw, I got into
+  robotics by programming Arduino and Raspberry Pi boards. After graduating
+  from technical high school, I was hired by Elmark Automatyka S.A., where
+  I gained experience in backend and frontend web development.
+`,
+    p3: `
+  In my free time, I design 3D prints, electronic circuits, and programs
+  that make my daily life easier. I plan to pursue a degree in mechatronics
+  to deepen this hybrid software/hardware interest.
 `
   },
   robotics: {
