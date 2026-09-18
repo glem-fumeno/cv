@@ -5,7 +5,8 @@
   import t, { setLanguage } from "$lib/translations/language.svelte";
   import english from "$lib/assets/en.svg";
   import polish from "$lib/assets/pl.svg";
-  import { resolve } from "$app/paths";
+  import type { Language } from "$lib/types";
+  import burger from "$lib/assets/burger.svg";
 
   let { children } = $props();
   const urlMap: {
@@ -30,6 +31,26 @@
       });
     });
   });
+  let routes = [
+    { url: "/", header: t("bio.header") },
+    { url: "/robotics", header: t("robotics.header") },
+    { url: "/backend", header: t("backend.header") },
+    { url: "/frontend", header: t("frontend.header") },
+    { url: "/contact", header: t("contact.header") }
+  ];
+  let languages: { language: Language; picture: string }[] = [
+    { language: "English", picture: english },
+    { language: "Polski", picture: polish }
+  ];
+  let drawer: HTMLDialogElement;
+
+  function openDrawer() {
+    drawer.showModal();
+  }
+
+  function closeDrawer() {
+    drawer.close();
+  }
 </script>
 
 <svelte:head>
@@ -37,41 +58,52 @@
 </svelte:head>
 
 <main>
-  <h1>{urlMap[url]}</h1>
-  <nav>
-    <a href={resolve("/")} class:active={url === "/"}>{t("bio.header")}</a>
-    <a href={resolve("/robotics")} class:active={url === "/robotics"}
-      >{t("robotics.header")}</a
-    >
-    <a href={resolve("/backend")} class:active={url === "/backend"}
-      >{t("backend.header")}</a
-    >
-    <a href={resolve("/frontend")} class:active={url === "/frontend"}
-      >{t("frontend.header")}</a
-    >
-    <a href={resolve("/contact")} class:active={url === "/contact"}
-      >{t("contact.header")}</a
-    >
-    <div class="languages">
-      <button
-        onclick={() => {
-          setLanguage("English");
-        }}
-      >
-        <img src={english} alt="english" />
-      </button>
-      <button
-        onclick={() => {
-          setLanguage("Polski");
-        }}
-      >
-        <img src={polish} alt="polish" />
-      </button>
+  <header>
+    <button class="nav-trigger" onclick={openDrawer} aria-label="Open menu">
+      <img src={burger} alt="nav trigger" />
+    </button>
+    <h1>{urlMap[url]}</h1>
+  </header>
+  <div class="non-header">
+    <nav class="nav-sidebar">
+      {#each routes as route}
+        <a href={route.url} class:active={url === route.url}>{route.header}</a>
+      {/each}
+      <div class="languages">
+        {#each languages as language}
+          <button onclick={() => setLanguage(language.language)}>
+            <img src={language.picture} alt={language.language} />
+          </button>
+        {/each}
+      </div>
+    </nav>
+    <div class="content">
+      {@render children()}
     </div>
-  </nav>
-  <div class="content">
-    {@render children()}
   </div>
+
+  <dialog
+    bind:this={drawer}
+    class="nav-drawer"
+    onclick={(e) => e.target === drawer && closeDrawer()}
+  >
+    <nav>
+      {#each routes as route}
+        <a
+          href={route.url}
+          onclick={closeDrawer}
+          class:active={url === route.url}>{route.header}</a
+        >
+      {/each}
+      <div class="languages">
+        {#each languages as language}
+          <button onclick={() => setLanguage(language.language)}>
+            <img src={language.picture} alt={language.language} />
+          </button>
+        {/each}
+      </div>
+    </nav>
+  </dialog>
 </main>
 
 <style>
@@ -89,6 +121,7 @@
 
     background-color: var(--color-base);
     color: var(--color-foreground);
+    margin-inline: 1rem;
   }
   :global(img) {
     width: 100%;
@@ -106,24 +139,69 @@
     font-size: 36px;
   }
   main {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto 1fr;
     height: 100vh;
-    max-width: 1200px;
+    max-width: 1000px;
     margin-inline: auto;
-    column-gap: 5rem;
+    position: relative;
+  }
+  header {
+    grid-column: 1 / -1;
+    display: flex;
   }
   h1 {
-    grid-column: 1 / -1;
     margin-inline: auto;
     font-size: 48px;
+    max-width: 800px;
+  }
+  .non-header {
+    display: flex;
+    gap: 5rem;
+  }
+  .content {
+    margin-inline: auto;
+    width: 100%;
+  }
+  .nav-trigger {
+    display: none;
+    img {
+      width: 24px;
+    }
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    top: 2.5rem;
   }
   nav {
     display: flex;
     flex-direction: column;
-    align-items: end;
     gap: 0.5rem;
+    min-width: 120px;
+  }
+
+  .nav-sidebar {
+    align-items: end;
+  }
+  @media (max-width: 800px) {
+    .nav-trigger {
+      display: unset;
+    }
+    .nav-sidebar {
+      display: none;
+    }
+  }
+  .nav-drawer {
+    margin: 0 auto 0 0;
+    height: 100dvh;
+    max-height: 100dvh;
+    width: min(80vw, 320px);
+    border: none;
+
+    transition:
+      translate 0.25s ease,
+      overlay 0.25s allow-discrete,
+      display 0.25s allow-discrete;
   }
 
   .languages {
@@ -152,7 +230,7 @@
     text-decoration: none;
     color: var(--color-foreground);
     font-size: 20px;
-    padding: 0.2rem 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     &.active {
       font-weight: bold;

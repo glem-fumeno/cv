@@ -4,57 +4,65 @@
   import mosaicV3 from "$lib/assets/mosaic-v3.png";
   import deepDive from "$lib/assets/deep-dive-v2.png";
   import t from "$lib/translations/language.svelte";
+  import icManagerV1 from "$lib/assets/icmanager-v1.jpg";
+  import icManagerV2 from "$lib/assets/icmanager-v2.jpg";
 </script>
 
-<h2>{t("frontend.mosaic.title")}</h2>
-<span>
-  <div class="images">
-    <img src={mosaicV1} alt={t("frontend.mosaic.title") + " 1"} />
-    <img src={mosaicV2} alt={t("frontend.mosaic.title") + " 2"} />
-    <img src={mosaicV3} alt={t("frontend.mosaic.title") + " 3"} />
-  </div>
-  <p>{t("frontend.mosaic.content")}</p>
-</span>
+<div class="projects">
+  <span>
+    <h2>{t("frontend.mosaic.title")}</h2>
+    <div class="images">
+      <img src={mosaicV1} alt={t("frontend.mosaic.title") + " 1"} />
+      <img src={mosaicV2} alt={t("frontend.mosaic.title") + " 2"} />
+      <img src={mosaicV3} alt={t("frontend.mosaic.title") + " 3"} />
+    </div>
+    <p>{t("frontend.mosaic.content")}</p>
+  </span>
 
-<h2>{t("frontend.deepdive.title")}</h2>
-<span>
-  <p>{t("frontend.deepdive.content")}</p>
-  <img src={deepDive} alt={t("frontend.deepdive.title")} />
-</span>
+  <span>
+    <h2>{t("frontend.deepdive.title")}</h2>
+    <div class="images">
+      <img src={deepDive} alt={t("frontend.deepdive.title")} />
+    </div>
+    <p>{t("frontend.deepdive.content")}</p>
+  </span>
 
-<h2>{t("frontend.pkp.title")}</h2>
-<span>
-  <p style="grid-column: 1 / -1">{t("frontend.pkp.content")}</p>
-</span>
+  <span>
+    <h2>{t("frontend.pkp.title")}</h2>
+    <div class="images">
+      <img src={icManagerV1} alt={t("frontend.pkp.title") + " 1"} />
+      <img src={icManagerV2} alt={t("frontend.pkp.title") + " 2"} />
+    </div>
+    <p>{t("frontend.pkp.content")}</p>
+  </span>
+</div>
 
 <style>
+  .projects {
+    display: grid;
+  }
   h2 {
     margin-block: 1rem;
   }
-  .images {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.2rem;
-    img {
-      aspect-ratio: auto;
+  span {
+    &:nth-of-type(odd) {
+      .images {
+        float: left;
+        margin-right: 1rem;
+      }
+    }
+    &:nth-of-type(even) {
+      .images {
+        float: right;
+        margin-left: 1rem;
+      }
     }
   }
   img {
-    margin-block: 1.5rem;
     object-fit: cover;
-    display: block;
+    display: inline-block;
     border-radius: 0.5rem;
     border: 2px solid var(--color-accent);
-  }
-  span {
-    display: grid;
-    gap: 1rem;
-
-    &:nth-of-type(odd) {
-      grid-template-columns: 200px 1fr;
-    }
-    &:nth-of-type(even) {
-      grid-template-columns: 1fr 200px;
-    }
+    width: calc(200px / sibling-count());
   }
 </style>

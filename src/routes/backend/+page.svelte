@@ -9,70 +9,76 @@
   import t from "$lib/translations/language.svelte";
 </script>
 
-<h2>{t("backend.fmn.title")}</h2>
-<span>
-  <div class="images">
-    <img src={fmnV1} alt={t("backend.fmn.title") + " 1"} />
-    <img src={fmnV2} alt={t("backend.fmn.title") + " 2"} />
-    <img src={fmnV3} alt={t("backend.fmn.title") + " 3"} />
-  </div>
-  <p>{t("backend.fmn.content")}</p>
-</span>
+<div class="projects">
+  <span>
+    <h2>{t("backend.fmn.title")}</h2>
+    <div class="images">
+      <img src={fmnV1} alt={t("backend.fmn.title") + " 1"} />
+      <img src={fmnV2} alt={t("backend.fmn.title") + " 2"} />
+      <img src={fmnV3} alt={t("backend.fmn.title") + " 3"} />
+    </div>
+    <p>{t("backend.fmn.content")}</p>
+  </span>
 
-<h2>{t("backend.pim.title")}</h2>
-<span>
-  <p>{t("backend.pim.content")}</p>
-  <img src={pim} alt={t("backend.pim.title")} />
-</span>
+  <span>
+    <h2>{t("backend.pim.title")}</h2>
+    <div class="images">
+      <img src={pim} alt={t("backend.pim.title")} />
+    </div>
+    <p>{t("backend.pim.content")}</p>
+  </span>
 
-<h2>{t("backend.users.title")}</h2>
-<span>
-  <img src={users} alt={t("backend.users.title")} />
-  <p>{t("backend.users.content")}</p>
-</span>
+  <span>
+    <h2>{t("backend.users.title")}</h2>
+    <div class="images">
+      <img src={users} alt={t("backend.users.title")} />
+    </div>
+    <p>{t("backend.users.content")}</p>
+  </span>
 
-<h2>{t("backend.qpw.title")}</h2>
-<span>
-  <p>{t("backend.qpw.content")}</p>
-  <img src={qpw} alt={t("backend.qpw.title")} />
-</span>
+  <span>
+    <h2>{t("backend.qpw.title")}</h2>
+    <div class="images">
+      <img src={qpw} alt={t("backend.qpw.title")} />
+    </div>
+    <p>{t("backend.qpw.content")}</p>
+  </span>
 
-<h2>{t("backend.deepdive.title")}</h2>
-<span>
-  <img src={deepDive} alt={t("backend.deepdive.title")} />
-  <p>{t("backend.deepdive.content")}</p>
-</span>
+  <span>
+    <h2>{t("backend.deepdive.title")}</h2>
+    <div class="images">
+      <img src={deepDive} alt={t("backend.deepdive.title")} />
+    </div>
+    <p>{t("backend.deepdive.content")}</p>
+  </span>
+</div>
 
 <style>
+  .projects {
+    display: grid;
+  }
   h2 {
     margin-block: 1rem;
   }
-  .images {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.2rem;
-    img {
-      width: calc(200px / 3);
-      aspect-ratio: auto;
+  span {
+    &:nth-of-type(odd) {
+      .images {
+        float: left;
+        margin-right: 1rem;
+      }
+    }
+    &:nth-of-type(even) {
+      .images {
+        float: right;
+        margin-left: 1rem;
+      }
     }
   }
   img {
-    margin-block: 1.5rem;
     object-fit: cover;
-    display: block;
-    width: 200px;
+    display: inline-block;
     border-radius: 0.5rem;
     border: 2px solid var(--color-accent);
-  }
-  span {
-    display: grid;
-    gap: 1rem;
-
-    &:nth-child(odd) {
-      grid-template-columns: auto 1fr;
-    }
-    &:nth-child(even) {
-      grid-template-columns: 1fr auto;
-    }
+    width: calc(200px / sibling-count());
   }
 </style>
