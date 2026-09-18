@@ -1,12 +1,13 @@
 <script lang="ts">
   import { onNavigate } from "$app/navigation";
   import { page } from "$app/state";
-  import favicon from "$lib/assets/favicon.svg";
+  import favicon from "$lib/assets/icons/favicon.svg";
   import t, { setLanguage } from "$lib/translations/language.svelte";
-  import english from "$lib/assets/en.svg";
-  import polish from "$lib/assets/pl.svg";
+  import english from "$lib/assets/icons/en.svg";
+  import polish from "$lib/assets/icons/pl.svg";
   import type { Language } from "$lib/types";
-  import burger from "$lib/assets/burger.svg";
+  import burger from "$lib/assets/icons/burger.svg";
+    import { resolve } from "$app/paths";
 
   let { children } = $props();
   const urlMap: {
@@ -31,13 +32,13 @@
       });
     });
   });
-  let routes = [
+  let routes = $derived([
     { url: "/", header: t("bio.header") },
     { url: "/robotics", header: t("robotics.header") },
     { url: "/backend", header: t("backend.header") },
     { url: "/frontend", header: t("frontend.header") },
     { url: "/contact", header: t("contact.header") }
-  ];
+  ]);
   let languages: { language: Language; picture: string }[] = [
     { language: "English", picture: english },
     { language: "Polski", picture: polish }
@@ -67,7 +68,7 @@
   <div class="non-header">
     <nav class="nav-sidebar">
       {#each routes as route}
-        <a href={route.url} class:active={url === route.url}>{route.header}</a>
+        <a href={resolve(route.url as any)} class:active={url === route.url}>{route.header}</a>
       {/each}
       <div class="languages">
         {#each languages as language}
@@ -90,7 +91,7 @@
     <nav>
       {#each routes as route}
         <a
-          href={route.url}
+          href={resolve(route.url as any)}
           onclick={closeDrawer}
           class:active={url === route.url}>{route.header}</a
         >

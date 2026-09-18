@@ -35,7 +35,9 @@ type Leaves<T> = T extends object
     }[keyof T]
   : never;
 
-function t(key: Leaves<typeof en>): string {
+export type Translation = Leaves<typeof en>;
+
+function t(key: Translation): string {
   let n: any = language;
   key.split(".").forEach((k) => {
     n = n?.[k];

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import mail from "$lib/assets/email.svg";
-  import linkedin from "$lib/assets/linkedin.svg";
+  import mail from "$lib/assets/icons/email.svg";
+  import linkedin from "$lib/assets/icons/linkedin.svg";
   import t from "$lib/translations/language.svelte";
 </script>
 
