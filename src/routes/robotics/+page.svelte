@@ -4,13 +4,17 @@
   import mobileRobot from "$lib/assets/projects/robotics/mobile-robot.jpg";
   import rocketEngine from "$lib/assets/projects/robotics/engine.webp";
   import Project from "$lib/components/project.svelte";
+  import ImageView from "$lib/components/image-view.svelte";
+
+  let drawer: ImageView | undefined = $state();
 </script>
 
 <div class="projects">
-  <Project name="robotics.skills" images={[skills]} />
-  <Project name="robotics.rubiks" images={[rubiks]} />
-  <Project name="robotics.mobil" images={[mobileRobot]} />
-  <Project name="robotics.engine" images={[rocketEngine]} />
+  <Project name="robotics.skills" images={[skills]} drawer={drawer!} />
+  <Project name="robotics.rubiks" images={[rubiks]} drawer={drawer!} />
+  <Project name="robotics.mobil" images={[mobileRobot]} drawer={drawer!} />
+  <Project name="robotics.engine" images={[rocketEngine]} drawer={drawer!} />
+  <ImageView bind:this={drawer} />
 </div>
 
 <style>

@@ -1,6 +1,6 @@
 export default {
   bio: {
-    header: "Bio",
+    header: "About me",
     p1: `
   I am a passionate software developer with over four years of professional
   experience and numerous completed projects. The software architecture
@@ -115,7 +115,7 @@ export default {
 `
     },
     deepdive: {
-      title: "Universal Robots monitoring tool",
+      title: "Universal Robots monitoring tool",
       content: `
   The tool made it possible to inspect servicing data while the robot was
   operating. It displayed aggregated data such as angles or currents on graphs.
@@ -123,18 +123,18 @@ export default {
 `
     },
     pkp: {
-      title: "PKP ticket app",
+      title: "Polish State Railways ticket app",
       content: `
-  Before the official PKP mobile app was released, I created my own that
-  could read PDF tickets, save upcoming trips, and display a QR code for
-  inspection. The app was developed in Android Studio.
+  Before the official Polish State Railways mobile app was released, I
+  created my own that could read bulky PDF tickets, save upcoming trips,
+  and display a QR code for inspection. The app was developed in Android Studio.
 `
     }
   },
   contact: {
     header: "Contact",
     content: `
-You can contact me via the following:
+Feel free to contact me:
 `
   }
 };

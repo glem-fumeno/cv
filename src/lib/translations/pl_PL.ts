@@ -44,7 +44,7 @@ export default {
 `
     },
     mobil: {
-      title: "Mobilny robot z sześcio osiowymi ramionami",
+      title: "Mobilny robot z sześcio osiowymi ramionami",
       content: `
   Robot wyposażony był w dwa ramiona sześcio osiowe którym zaprogramowałam
   kinematykę odwrotną, sposób poruszania się robota oraz moduł wizji
@@ -54,7 +54,7 @@ export default {
 `
     },
     engine: {
-      title: "Sterowanie i reprezentacja zachowania silnika rakietowego",
+      title: "Sterowanie i reprezentacja zachowania silnika rakietowego",
       content: `
   W tym projekcie z zespołem badaliśmy nacisk silnika rakietowego na
   belkę tensometryczną. Silnik sterowany był zdalnie za pomocą interfejsu
@@ -102,7 +102,7 @@ export default {
 `
     },
     deepdive: {
-      title: "Agregator danych robotów Universal Robots",
+      title: "Agregator danych robotów Universal Robots",
       content: `
   Skonfigurowałam urządzenie brzegowe z systemem Linux, które pozyskiwało
   informacje o pracy robota takie jak pozycje przegubów czy ich temperatury.
@@ -121,7 +121,7 @@ export default {
   `
     },
     deepdive: {
-      title: "System prezentacji robotów Universal Robots",
+      title: "System prezentacji robotów Universal Robots",
       content: `
   Narzędzie to umożliwiało wyświetlenie danych serwisowych robota w trakcie
   jego pracy. Prezentowało dane takie jak kąty lub temperatury przegubów na
@@ -132,16 +132,17 @@ export default {
     pkp: {
       title: "Aplikacja biletów PKP",
       content: `
-  Przed powstaniem oficjalnej mobilnej aplikacji PKP stworzyłam swoją -
-  taką, która mogła odczytać bilety PDF, przechować nadchodzące podróże
-  i wyświetlić kod QR do kontroli. Aplikacja była napisana w Android Studio.
+  Przed powstaniem oficjalnej mobilnej aplikacji PKP stworzyłam swoją - taką,
+  która mogła odczytać nieporęczne bilety w formacie PDF, przechować
+  nadchodzące podróże i wyświetlić kod QR do kontroli. Aplikacja była
+  napisana w Android Studio.
   `
     }
   },
   contact: {
     header: "Kontakt",
     content: `
-Można się ze mną skontaktować poprzez:
+Zapraszam do kontaktu:
 `
   }
 };

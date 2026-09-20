@@ -8,11 +8,11 @@
 <section>
   <a href="mailto:emiliaglibowska@gmail.com">
     <img src={mail} alt="email" />
-    Email
+    emiliaglibowska@gmail.com
   </a>
   <a href="https://www.linkedin.com/in/emilia-glibowska-72b669437">
     <img src={linkedin} alt="linkedin" />
-    Linked In
+    linkedin.com/in/emilia-glibowska-72b669437
   </a>
 </section>
 
@@ -22,14 +22,21 @@
       width: 2rem;
     }
     a {
-      text-decoration: none;
       display: block;
       color: var(--color-foreground);
-      font-size: 28px;
+      font-size: 20px;
       display: flex;
       align-items: center;
       gap: 1rem;
       padding: 0.5rem;
+      @media (max-width: 950px) {
+        font-size: 18px;
+        line-height: 1.75rem;
+      }
+      @media (max-width: 500px) {
+        font-size: 16px;
+        line-height: 1.5rem;
+      }
     }
   }
 </style>

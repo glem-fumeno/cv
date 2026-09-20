@@ -96,7 +96,10 @@
       </div>
     </nav>
     <div class="content">
-      {@render children()}
+      <div class="children">
+        {@render children()}
+      </div>
+      <footer>© 2026 -  Emilia Glibowska</footer>
     </div>
   </div>
 
@@ -152,18 +155,43 @@
     color: var(--color-foreground);
     text-align: justify;
     line-height: 2rem;
+
+    @media (max-width: 950px) {
+      font-size: 18px;
+      line-height: 1.75rem;
+    }
+    @media (max-width: 500px) {
+      font-size: 16px;
+      line-height: 1.5rem;
+    }
   }
   :global(h1) {
     font-size: 48px;
+
+    @media (max-width: 950px) {
+      font-size: 40px;
+    }
+    @media (max-width: 500px) {
+      font-size: 36px;
+    }
   }
   :global(h2) {
     font-size: 36px;
+
+    @media (max-width: 950px) {
+      font-size: 32px;
+    }
+    @media (max-width: 500px) {
+      font-size: 28px;
+    }
   }
   main {
     height: 100vh;
     max-width: 1000px;
     margin-inline: auto;
     position: relative;
+    display: flex;
+    flex-direction: column;
   }
   header {
     grid-column: 1 / -1;
@@ -171,16 +199,28 @@
   }
   h1 {
     margin-inline: auto;
-    font-size: 48px;
-    max-width: 800px;
+    max-width: 950px;
   }
   .non-header {
     display: flex;
     gap: 5rem;
+    position: relative;
+    flex: 1;
   }
   .content {
     margin-inline: auto;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .children {
+      flex: 1;
+    }
+    footer {
+      margin-inline: auto;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
   }
   .nav-trigger {
     display: none;
@@ -192,7 +232,10 @@
     cursor: pointer;
     padding: 0.5rem;
     position: absolute;
-    top: 2.5rem;
+    top: 2rem;
+    @media (max-width: 500px) {
+      top: 1.75rem;
+    }
   }
   nav {
     display: flex;
@@ -204,7 +247,7 @@
   .nav-sidebar {
     align-items: end;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 950px) {
     .nav-trigger {
       display: unset;
     }
@@ -238,7 +281,7 @@
         translate: -100% 0;
       }
       &[open]::backdrop {
-      background-color: #00000000;
+        background-color: #00000000;
       }
     }
 
