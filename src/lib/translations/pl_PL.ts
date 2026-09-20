@@ -2,23 +2,26 @@ export default {
   bio: {
     header: "O mnie",
     p1: `
-  Jestem pełną pasji programistką z ponad czteroletnim doświadczeniem
-  zawodowym i licznymi zrealizowanymi projektami. Projektowana przeze mnie
-  architektura oprogramowania jest stabilna i skalowalna. Cenię sobie
-  przejrzysty i łatwy w utrzymaniu kod, a także zasady TDD.
+  Jako programistka z ponad czteroletnim stażem zawodowym łączę pasję
+  do kodowania z doświadczeniem zdobytym przy realizacji zaawansowanych
+  projektów. Tworzę stabilną i skalowalną architekturę oprogramowania,
+  a w codziennej pracy cenię sobie przejrzysty i łatwy w utrzymaniu kod
+  oraz kieruję się praktyką TDD.
 `,
     p2: `
-  Moje zainteresowanie programowaniem zaczęło się w dzieciństwie
-  od Processing i p5.js. W Technikum Mechatronicznym nr. 1 w Warszawie
-  zainteresowałam się robotyką poprzez programowanie płytek Arduino i Raspberry
-  Pi. Po ukończeniu technikum zostałam zatrudniona w firmie Elmark Automatyka
-  S.A., gdzie zdobyłam doświadczenie w tworzeniu aplikacji internetowych
-  zarówno po stronie serwerowej, jak i klienckiej.
+  Moje zainteresowanie programowaniem rozwijajało się już w dzieciństwie
+  w środowisku Processing i p5.js. Kolejnym krokiem była nauka w Technikum
+  Mechatronicznym nr 1 w Warszawie, gdzie zafascynowała mnie robotyka oraz
+  programowanie układów Arduino i Raspberry Pi. Po ukończeniu szkoły
+  dołączyłam do zespołu Elmark Automatyka S.A., gdzie jako programistka
+  zdobyłam doświadczenie w tworzeniu aplikacji internetowych - zarówno
+  po stronie backendowej, jak i frontendowej.
 `,
     p3: `
   W wolnym czasie projektuję modele do druku 3D, obwody elektroniczne oraz
-  programy, które ułatwiają mi codzienne życie. Planuję rozpocząć studia
-  na kierunku mechatronicznym, aby pogłębić swoje zainteresowania.
+  autorskie narzędzia automatyzujące codzienne zadania.  W najbliższym
+  czasie planuję rozpocząć studia na kierunku mechatronicznym, aby dalej
+  rozwijać swoje interdyscyplinarne kompetencje.
 `
   },
   robotics: {
@@ -26,41 +29,41 @@ export default {
     skills: {
       title: "Euro Skills",
       content: `
-  Reprezentowałam Polskę na międzynarodowych zawodach
-  EuroSkills w dziedzinie "Mechatronika". W dwu osobowej
-  drużynie odpowiedzialna byłam za zaprogramowanie serii
-  sterowników PLC, tak żeby stacja MPS wykonywała poleconą
+  Reprezentowałam Polskę na międzynarodowych zawodach
+  EuroSkills w dziedzinie "Mechatronika". W dwuosobowej
+  drużynie byłam odpowiedzialna za programowanie serii
+  sterowników PLC tak, by stacja MPS wykonywała poleconą
   sekwencję.
 `
     },
     rubiks: {
-      title: "Robot układający kostkę rubika",
+      title: "Robot układający kostkę Rubika",
       content: `
-  Zaprogramowałam ruch, analizę danych i komunikację dla robota układającego
-  kostkę Rubika. Robotem można było sterować za pomocą interfejsu napisanego
-  w PyQT. Robot wykorzystywał kamery i bibliotekę OpenCV do odczytywania
-  kolorów z kostki, a następnie poruszał silnikami krokowymi przez port
-  szeregowy za pomocą płytki Arduino.
+  Zaprogramowałam ruch, analizę danych i komunikację dla robota układającego
+  kostkę Rubika. Można było nim sterować za pomocą interfejsu napisanego
+  w PyQT. Robot wykorzystywał kamery i bibliotekę OpenCV do odczytywania
+  kolorów z kostki, a następnie poruszał silnikami krokowymi przez port
+  szeregowy za pomocą płytki Arduino.
 `
     },
     mobil: {
-      title: "Mobilny robot z sześcio osiowymi ramionami",
+      title: "Mobilny robot z sześcioosiowymi ramionami",
       content: `
-  Robot wyposażony był w dwa ramiona sześcio osiowe którym zaprogramowałam
+  Robot wyposażony był w dwa sześcioosiowe ramiona, którym zaprogramowałam
   kinematykę odwrotną, sposób poruszania się robota oraz moduł wizji
-  wykrywający pudełka i piłki. Odpowiedzialna byłam za zaprogramowanie
-  wykrywania obiektów, przemieszczania się o odpowiedni dystans przy użyciu
+  wykrywający pudełka i piłki. Byłam odpowiedzialna za programowanie
+  wykrywania obiektów, przemieszczania się o odpowiedni dystans przy użyciu
   silników krokowych oraz podnoszenia obiektów ramionami.
 `
     },
     engine: {
       title: "Sterowanie i reprezentacja zachowania silnika rakietowego",
       content: `
-  W tym projekcie z zespołem badaliśmy nacisk silnika rakietowego na
-  belkę tensometryczną. Silnik sterowany był zdalnie za pomocą interfejsu
-  użytkownika napisanym w PyQT, który wyświetlał również reprezentację
-  nacisku na grafie. Aplikacja główna komunikowała się z ESP8266 poprzez
-  połączenie typu socket.
+  W trakcie realizacji projektu, wraz z zespołem, badałam nacisk silnika
+  rakietowego na belkę tensometryczną. Silnik był zdalnie sterowany
+  za pomocą interfejsu użytkownika napisanym w PyQT, który wyświetlał
+  również reprezentację nacisku na grafie. Aplikacja główna komunikowała
+  się z ESP8266 poprzez połączenie typu socket.
 `
     }
   },
@@ -69,45 +72,45 @@ export default {
     fmn: {
       title: "Aplikacja ułatwiająca zakupy",
       content: `
-  W tym dwuosobowym projekcie pracowałam nad połączeniem z bazą danych
-  i logiką całej aplikacji. Koszyk używał Event Sourcingu, a wydarzenia
-  były wysyłane do frontendu poprzez SSE.
+  W tym dwuosobowym projekcie pracowałam nad połączeniem z bazą danych
+  i logiką całej aplikacji. Koszyk używał Event Sourcingu, a wydarzenia
+  były wysyłane do frontendu poprzez SSE.
 `
     },
     pim: {
       title: 'System "Product Information Management"',
       content: `
-  Odpowiedzialna byłam za zespół trzyosobowy, którego zadaniem
-  było zaprogramowanie backendu do systemu PIM. Backend napisany był we
-  frameworku FastAPI i komunikował się z bazą danych PostgreSQL i
-  MongoDB oraz z serwisem S3. Całość była hostowana na AWS.
+  Realizując zadanie byłam odpowiedzialna za trzyosobowy zespół
+  programujący backend do systemu PIM. Backend napisany był we frameworku
+  FastAPI i komunikował się z bazą danych PostgreSQL i MongoDB oraz
+  z serwisem S3. Całość była hostowana na AWS.
 `
     },
     users: {
       title: "System zarządzania użytkownikami",
       content: `
-  Moduł ten był częścią większego systemu, w obrębie którego
-  zarządzał autoryzacją i umożliwiał zarządzanie permisjami i rolami
-  pracowników. Sesje były przechowywane w bazie danych Redis, a dane
-  użytkowników w bazie danych PostgreSQL.
+  Moduł ten stanowił część większego systemu, w którym odpowiadał
+  za autoryzacją oraz zarządzanie rolami i uprawnieniami pracowników.
+  Do obsługi sesji wykorzystano bazę Redis, a dane użytkowników
+  były przechowywane w bazie PostgreSQL
 `
     },
     qpw: {
       title: "System przeliczania formuł",
       content: `
-  Zaprojektowałam i wdrożyłam mechanizm przeliczania formuł wpisanych
-  przez użytkownika. Jego interpreter wywoływany był przez RPC
-  z RabbitMQ. Obsługiwał działania na liczbach, listach i wartościach
+  Zaprojektowałam i wdrożyłam mechanizm przeliczania formuł wpisywanych
+  przez użytkownika. Jego interpreter był wywoływany przez RPC
+  z RabbitMQ. Obsługiwał działania na liczbach, listach i wartościach
   tekstowych.
 `
     },
     deepdive: {
       title: "Agregator danych robotów Universal Robots",
       content: `
-  Skonfigurowałam urządzenie brzegowe z systemem Linux, które pozyskiwało
-  informacje o pracy robota takie jak pozycje przegubów czy ich temperatury.
-  Pozyskane dane wysyłane były cyklicznie do centralnego serwera agregującego
-  dane w bazie danych szeregów czasowych.
+  Skonfigurowałam urządzenie brzegowe z systemem Linux służące
+  do pozyskiwania informacji o pracy robota - m.in. pozycje i temperatury
+  przegubów. Dane te były cyklicznie przesyłane do centralnego serwera
+  agregującego je w bazie danych szeregów czasowych.
 `
     }
   },
@@ -116,33 +119,34 @@ export default {
     mosaic: {
       title: "Gra logiczna",
       content: `
-  Za pomocą Tauri stworzyłam grę mobilną w środowisku Svelte.
-  Gra zawierała kilka motywów, tłumaczenia, samouczek i animacje.
-  `
-    },
-    deepdive: {
-      title: "System prezentacji robotów Universal Robots",
-      content: `
-  Narzędzie to umożliwiało wyświetlenie danych serwisowych robota w trakcie
-  jego pracy. Prezentowało dane takie jak kąty lub temperatury przegubów na
-  wykresach. Zawierało również interaktywny model 3D służący do łatwej analizy
-  stanu robota
+  Za pomocą Tauri zaprogramowałam grę mobilną w środowisku Svelte.
+  Gra zawierała kilka motywów, tłumaczenia, samouczek i animacje.
   `
     },
     pkp: {
       title: "Aplikacja biletów PKP",
       content: `
-  Przed powstaniem oficjalnej mobilnej aplikacji PKP stworzyłam swoją - taką,
-  która mogła odczytać nieporęczne bilety w formacie PDF, przechować
-  nadchodzące podróże i wyświetlić kod QR do kontroli. Aplikacja była
-  napisana w Android Studio.
+  Jeszcze przed powstaniem oficjalnej mobilnej aplikacji PKP zaprogramowałam
+  autorskie rozwiązanie ułatwiające zarządzanie biletami kolejowymi.
+  Moja aplikacja automatycznie przetwarzała nieporęczne bilety w formacie
+  PDF, przechowywała harmonogram nadchodzących podróży i pozwalała
+  wyświetlić kod QR do kontroli. Projekt zrealizowałam w Android Studio.
   `
-    }
+    },
+    deepdive: {
+      title: "System prezentacji robotów Universal Robots",
+      content: `
+  Narzędzie to umożliwiało monitorowanie parametrów serwisowych robota
+  w czasie rzeczywistym. Prezentowało na wykresach bierzące wartości
+  takie jak kąty czy temperatury przegubów, a wbudowany interaktywny
+  model 3D pozwalał na szybką diagnostykę stanu technicznego maszyny.
+  `
+    },
   },
   contact: {
     header: "Kontakt",
     content: `
-Zapraszam do kontaktu:
+Zapraszam do kontaktu:
 `
   }
 };

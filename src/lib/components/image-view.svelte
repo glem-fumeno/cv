@@ -64,11 +64,10 @@
     width: 48px;
     height: 48px;
     background-color: transparent;
+    cursor: pointer;
   }
   .nav-drawer {
     inset: 0;
-    max-height: 80dvh;
-    max-width: 80dvw;
     border: none;
     padding: 0;
     border-radius: 0.5rem;

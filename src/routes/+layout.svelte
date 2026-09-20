@@ -74,33 +74,31 @@
 </svelte:head>
 
 <main>
-  <header>
-    <button class="nav-trigger" onclick={openDrawer} aria-label="Open menu">
-      <img src={burger} alt="nav trigger" />
-    </button>
-    <h1>{urlMap[url]}</h1>
-  </header>
-  <div class="non-header">
-    <nav class="nav-sidebar">
-      {#each routes as route}
-        <a href={resolve(route.url as any)} class:active={url === route.url}
-          >{route.header}</a
-        >
+  <nav class="nav-sidebar">
+    {#each routes as route}
+      <a href={resolve(route.url as any)} class:active={url === route.url}
+        >{route.header}</a
+      >
+    {/each}
+    <div class="languages">
+      {#each languages as language}
+        <button onclick={() => setLanguage(language.language)}>
+          <img src={language.picture} alt={language.language} />
+        </button>
       {/each}
-      <div class="languages">
-        {#each languages as language}
-          <button onclick={() => setLanguage(language.language)}>
-            <img src={language.picture} alt={language.language} />
-          </button>
-        {/each}
-      </div>
-    </nav>
-    <div class="content">
-      <div class="children">
-        {@render children()}
-      </div>
-      <footer>© 2026 -  Emilia Glibowska</footer>
     </div>
+  </nav>
+  <div class="content">
+    <header>
+      <button class="nav-trigger" onclick={openDrawer} aria-label="Open menu">
+        <img src={burger} alt="nav trigger" />
+      </button>
+      <h1>{urlMap[url]}</h1>
+    </header>
+    <div class="children">
+      {@render children()}
+    </div>
+    <footer>© 2026 - Emilia Glibowska</footer>
   </div>
 
   <dialog
@@ -191,7 +189,7 @@
     margin-inline: auto;
     position: relative;
     display: flex;
-    flex-direction: column;
+    gap: 5rem;
   }
   header {
     grid-column: 1 / -1;
@@ -200,12 +198,6 @@
   h1 {
     margin-inline: auto;
     max-width: 950px;
-  }
-  .non-header {
-    display: flex;
-    gap: 5rem;
-    position: relative;
-    flex: 1;
   }
   .content {
     margin-inline: auto;
@@ -245,6 +237,7 @@
   }
 
   .nav-sidebar {
+    margin-top: 150px;
     align-items: end;
   }
   @media (max-width: 950px) {
