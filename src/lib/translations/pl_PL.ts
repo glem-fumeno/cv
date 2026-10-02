@@ -2,7 +2,7 @@ export default {
   bio: {
     header: "O mnie",
     p1: `
-  Jako programistka z ponad czteroletnim stażem zawodowym łączę pasję
+  Jako programistka z ponad pięcioletnim doświadczeniem łączę pasję
   do kodowania z doświadczeniem zdobytym przy realizacji zaawansowanych
   projektów. Tworzę stabilną i skalowalną architekturę oprogramowania,
   a w codziennej pracy cenię sobie przejrzysty i łatwy w utrzymaniu kod

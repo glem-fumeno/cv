@@ -2,7 +2,7 @@ export default {
   bio: {
     header: "About me",
     p1: `
-  I am a passionate software developer with over four years of professional
+  I am a passionate software developer with over five years of
   experience and numerous completed projects. The software architecture
   I design is stable and scalable. I value clear and maintainable code,
   as well as the principles of TDD.
